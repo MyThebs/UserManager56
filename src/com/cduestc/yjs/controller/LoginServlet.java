@@ -23,37 +23,42 @@ public class LoginServlet extends HttpServlet {
     	System.out.println("LoginServlet 对象被初始化了！");
     }
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		 System.out.println("LoginServlet request:" + request.hashCode());
-		 System.out.println("当前对象：" + this);
-		 String name = request.getParameter("user_name");
-		 String pwd = request.getParameter("pass_word");
-         System.out.println("name = " + name);
-         System.out.println("pwd = " + pwd);
-         if(JdbcUtils.login(name, pwd)){
-        	 ServletContext ctx = getServletContext();
-        	 Integer count = (Integer) ctx.getAttribute("COUNTER");
-        	 count++;
-        	 ctx.setAttribute("COUNTER", count);
-             //登录成功，跳转到LoginSucess.有两种方式：1）重定向；2）转发
-        	 //重定向
-        	 //response.sendRedirect("/UserManager56/LoginSucess?USER_NAME="+name);
-             //转发
-        	 //request.setAttribute("COUNTER", count);
-        	 request.setAttribute("USER_NAME" , name);
-        	 RequestDispatcher disp = request.getRequestDispatcher("/UserList");
-        	 disp.forward(request, response);
-         }else{
-        	 //登录失败，跳转到LoginFailure
-        	 response.sendRedirect("/UserManager56/LoginFailure");
-         }
-	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-				throws ServletException, IOException{
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        System.out.println("LoginServlet request:" + request.hashCode());
+        System.out.println("当前对象：" + this);
+        String name = request.getParameter("user_name");
+        String pwd = request.getParameter("pass_word");
+        System.out.println("name = " + name);
+        System.out.println("pwd = " + pwd);
+        if (JdbcUtils.login(name, pwd))
+        {
+            ServletContext ctx = getServletContext();
+            Integer count = (Integer) ctx.getAttribute("COUNTER");
+            count++;
+            ctx.setAttribute("COUNTER", count);
+            //登录成功，跳转到LoginSucess.有两种方式：1）重定向；2）转发
+            //重定向
+            //response.sendRedirect("/UserManager56/LoginSucess?USER_NAME="+name);
+            //转发
+            //request.setAttribute("COUNTER", count);
+            request.setAttribute("USER_NAME", name);
+            RequestDispatcher disp = request.getRequestDispatcher("/UserList");
+            disp.forward(request, response);
+        } else
+        {
+            //登录失败，跳转到LoginFailure
+            response.sendRedirect("/UserManager56/LoginFailure");
+        }
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         doGet(request, response);
-	}
+    }
 
 	//销毁时被调用
 	@Override
