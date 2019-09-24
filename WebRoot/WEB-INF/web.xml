@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.cduestc.yjs.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginSucess</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.LoginSucess</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginFailure</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.LoginFailure</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserList</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.UserList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUserView</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.UpdateUserView</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>com.cduestc.yjs.controller.UpdateUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateOk</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.UpdateOk</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateFailure</servlet-name>
+    <servlet-class>com.cduestc.yjs.view.UpdateFailure</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserList</servlet-name>
+    <url-pattern>/UserList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginSucess</servlet-name>
+    <url-pattern>/LoginSucess</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginFailure</servlet-name>
+    <url-pattern>/LoginFailure</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUserView</servlet-name>
+    <url-pattern>/UpdateUserView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/UpdateUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateOk</servlet-name>
+    <url-pattern>/UpdateOk</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateFailure</servlet-name>
+    <url-pattern>/UpdateFailure</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>test.jsp</welcome-file>
+  </welcome-file-list>
+
+  <listener>
+     <listener-class>com.cduestc.yjs.listener.MyServletContextListener</listener-class>
+  </listener>
+</web-app>

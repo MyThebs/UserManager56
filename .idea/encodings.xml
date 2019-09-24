@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/LoginFailure.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/LoginSucess.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/UpdateFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/UpdateOk.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/UpdateUserView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/cduestc/yjs/view/UserList.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
